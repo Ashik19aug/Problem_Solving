@@ -17,10 +17,13 @@ public:
         vector<int> count(128);
         for (const char occranceCharCount: s) {
             ++count[occranceCharCount];
+            cout<< "1st :"<<count[occranceCharCount]<<"\n";
         }
 
-        for (const char occranceCharCount: t) {
-            if (--count[occranceCharCount] < 0) {
+        for (const char occranceCharCount2: t) {
+            cout<< "2nd :"<<count[occranceCharCount2]<<"\n";
+            if (--count[occranceCharCount2] < 0) {
+                cout<< "2nd if :"<<count[occranceCharCount2]<<"\n";
                 return false;
             }
         }
@@ -29,7 +32,7 @@ public:
 };
 
 int main() {
-    string c = "anagram", t = "nagaram";
+    string c = "rat", t = "car";
     Solution::isAnagram(c, t);
     return 0;
 }
